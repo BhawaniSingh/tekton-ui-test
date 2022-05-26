@@ -1,0 +1,74 @@
+@import '@carbon/elements/scss/themes/mixins'; 
+@include carbon--theme($carbon--theme--g90) {
+  $carbon--theme: $carbon--theme--g90;
+  @import 'carbon-components/scss/components/toggle/toggle';
+  @import 'carbon-components/scss/components/content-switcher/content-switcher';
+  @import '@carbon/charts/styles/styles.scss';
+
+  body {
+    background-color: $ui-background;
+    color: $text-01;
+    padding: 1rem;
+  }
+}
+
+.bx--content-switcher {
+  margin-block: 1rem;
+}
+
+.bx--cc--card-node {
+  &.card-status-success {
+    border-color: $support-02;
+  }
+  &.card-status-success-warning {
+    border-color: $support-03;
+  }
+  &.card-status-failed {
+    border-color: $support-01;
+  }
+  &.card-status-unknown {
+    border-color: $ui-04;
+  }
+}
+
+.bx--cc--card-node__column {
+  overflow: hidden;
+}
+
+.bx--cc--card-node__title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.status-icon {
+  .bx--cc--shape-node__icon & {
+    width: 24px;
+    height: 24px;
+  }
+
+  &.status-icon-failed {
+    fill: $support-01;
+  }
+
+  &.status-icon-success {
+    fill: $support-02;
+  }
+
+  &.status-icon-success-warning {
+    fill: $support-02;
+
+    path:nth-child(2) {
+      fill: $support-03;
+    }
+  }
+}
+
+.tkn--pipeline-graph {
+  margin-block: 1rem;
+}
+
+.tkn--pipeline-graph > svg {
+  position: relative;
+  margin-top: 1rem;
+}
